@@ -48,18 +48,10 @@ steps:
   - title: Expose the backend service
     preamble: |
       We now have two namespaces linked to form a Skupper network, but
-      no services are exposed on it.  Skupper uses the `skupper
+      no services are exposed on it.  You can use the `skupper
       expose` command to select a service from one namespace for
-      exposure on all the linked namespaces.
-
-      **Note:** You can expose services that are not in the same
-      namespace where you installed Skupper as described in the
-      [Exposing services from a different namespace][different-ns]
-      documentation.
-
-      [different-ns]: https://skupper.io/docs/cli/index.html#exposing-services-from-different-ns
-
-      Use annotations to expose the backend service to the
+      exposure on all the linked namespaces, but in this example
+      you use annotations to expose the backend service to the
       frontend service.
     commands:
       east:
