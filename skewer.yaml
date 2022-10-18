@@ -56,10 +56,7 @@ steps:
     commands:
       east:
         - await: deployment/backend
-        - run: kubectl annotate deployment backend "skupper.io/address=backend"
-        - run: kubectl annotate deployment backend "skupper.io/port=8080"
-        - run: kubectl annotate deployment backend "skupper.io/proxy=tcp"
-        - run: kubectl annotate deployment backend "skupper.io/target=backend"
+        - run: kubectl annotate deployment backend "skupper.io/address=backend" "skupper.io/port=8080" "skupper.io/proxy=tcp" "skupper.io/target=backend"
   - title: Expose the frontend service
     preamble: |
       We have established connectivity between the two namespaces and

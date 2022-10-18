@@ -299,10 +299,7 @@ frontend service.
 _**Console for east:**_
 
 ~~~ shell
-kubectl annotate deployment backend "skupper.io/address=backend"
-kubectl annotate deployment backend "skupper.io/port=8080"
-kubectl annotate deployment backend "skupper.io/proxy=tcp"
-kubectl annotate deployment backend "skupper.io/target=backend"
+kubectl annotate deployment backend "skupper.io/address=backend" "skupper.io/port=8080" "skupper.io/proxy=tcp" "skupper.io/target=backend"
 ~~~
 
 ## Step 10: Expose the frontend service
