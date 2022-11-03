@@ -299,7 +299,15 @@ frontend service.
 _**Console for east:**_
 
 ~~~ shell
-kubectl annotate deployment backend "skupper.io/address=backend" "skupper.io/port=8080" "skupper.io/proxy=tcp" "skupper.io/target=backend"
+kubectl expose deployment/backend --port 8080 --type LoadBalancer --name backendsvc
+kubectl annotate service backendsvc "skupper.io/address=backend" "skupper.io/port=8080" "skupper.io/proxy=tcp" "skupper.io/target=backendsvc"
+~~~
+
+_Sample output:_
+
+~~~ console
+$ kubectl expose deployment/backend --port 8080 --type LoadBalancer --name backendsvc
+service/backend exposed
 ~~~
 
 ## Step 10: Expose the frontend service
